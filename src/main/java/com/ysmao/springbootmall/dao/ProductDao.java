@@ -11,6 +11,8 @@ import java.util.List;
 @Transactional
 public interface ProductDao {
 
+    Integer countProduct(ProductQueryParams productQueryParams);
+
     List<Product> getProducts(ProductQueryParams productQueryParams);
 
     Product getProductId(Integer productId);

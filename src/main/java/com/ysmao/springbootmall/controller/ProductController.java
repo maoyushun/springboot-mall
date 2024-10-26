@@ -76,7 +76,7 @@ public class ProductController {
 
     @PutMapping("/products/{productId}")
     public ResponseEntity<Product> updateProduct(@PathVariable Integer productId,
-                                                                            @RequestBody @Valid ProductRequest productRequest) {
+                                                 @RequestBody @Valid ProductRequest productRequest) {
         // 檢查 product 是否存在
         Product product = productService.getProductId(productId);
 

@@ -107,7 +107,11 @@ public class ProductDaoImpl implements ProductDao {
 
         Map<String, Object> map = new HashMap<>();
         map.put("productName",  productRequest.getProductName());
-        map.put("category", productRequest.getCategory().toString());
+        if (productRequest.getCategory() == null) {
+            map.put("category", null);
+        } else {
+            map.put("category", productRequest.getCategory().toString());
+        }
         map.put("imageUrl", productRequest.getImageUrl());
         map.put("price", productRequest.getPrice());
         map.put("stock", productRequest.getStock());
@@ -136,7 +140,11 @@ public class ProductDaoImpl implements ProductDao {
         map.put("productId", productId);
 
         map.put("productName", productRequest.getProductName());
-        map.put("category", productRequest.getCategory().toString());
+        if (productRequest.getCategory() == null) {
+            map.put("category", null);
+        } else {
+            map.put("category", productRequest.getCategory().toString());
+        }
         map.put("imageUrl", productRequest.getImageUrl());
         map.put("price", productRequest.getPrice());
         map.put("stock", productRequest.getStock());
